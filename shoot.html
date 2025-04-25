@@ -917,6 +917,7 @@
   </div>
   <!-- Multi-step form -->
   <form action="https://formsubmit.co/blancoagencyy@gmail.com" enctype="multipart/form-data" method="POST">
+    <input type="hidden" name="_subject" value="Production">
     <input name="_captcha" type="hidden" value=""/>
 <input type="hidden" name="_next" value="https://blanco-agency.github.io/blancoagency/th.html">
     <div class="apply-container">
@@ -1106,6 +1107,22 @@
       mobileSidebar.classList.add('open');
       menuBtn.classList.add('active');
     });
+
+
+
+
+    document.querySelector('form').addEventListener('submit', function(e) {
+    const brandName = document.getElementById('brand-name').value;
+    document.querySelector('input[name="_subject"]').value = `New Production Request - ${brandName}`;
+});
+
+
+
+
+    document.querySelector('form').addEventListener('submit', function(e) {
+    const brandName = document.getElementById('brand-name').value;
+    document.querySelector('input[name="_subject"]').value = `New Production Request - ${brandName}`;
+});
     
     closeSidebar.addEventListener('click', function() {
       mobileSidebar.classList.remove('open');
