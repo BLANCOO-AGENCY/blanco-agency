@@ -745,6 +745,17 @@
     align-items: center;
     gap: 10px;
   }
+
+  .upload-area.error {
+  border: 2px solid red;
+  animation: shake 0.5s;
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  20%, 60% { transform: translateX(-5px); }
+  40%, 80% { transform: translateX(5px); }
+}
   
   .footer-btn {
     width: 100%;
@@ -798,7 +809,7 @@
 </div>
 </div>
 <!-- تطبيق النموذج متعدد الخطوات -->
-<form action="https://formsubmit.co/blanco.agency.222@gmail.com"blancoagencyy@gmail.com
+<form action="https://formsubmit.co/blanco.agency.222@gmail.com" enctype="multipart/form-data" method="POST">
 <input name="_captcha" type="hidden" value=""/>
 <input type="hidden" name="_next" value="https://blanco-agency.github.io/blancoagency/th.html">
 <div class="apply-container">
@@ -1020,20 +1031,50 @@
   const currentSection = document.getElementById(currentSectionId);
   const requiredInputs = currentSection.querySelectorAll('[required]');
   let isValid = true;
+  let missingFields = [];
 
+  // التحقق من الحقول المطلوبة
   requiredInputs.forEach(input => {
     if (!input.value.trim() || (input.type === 'radio' && !currentSection.querySelector(`[name="${input.name}"]:checked`))) {
       isValid = false;
       input.style.border = '2px solid red';
+      missingFields.push(input.name.replace('_', ' '));
     } else {
       input.style.border = ''; // reset border if valid
     }
   });
 
+  // التحقق من الصور فقط في القسم الأول
+  if (currentSectionId === 'section1') {
+    const fileInputs = currentSection.querySelectorAll('input[type="file"]');
+    let missingPhotos = [];
+    
+    fileInputs.forEach(input => {
+      if (!input.files || input.files.length === 0) {
+        isValid = false;
+        input.parentElement.style.border = '2px solid red';
+        missingPhotos.push(input.name.replace(/_/g, ' '));
+      } else {
+        input.parentElement.style.border = ''; // reset border if valid
+      }
+    });
+
+    if (missingPhotos.length > 0) {
+   
+      
+      return false;
+    }
+  }
+
+  if (missingFields.length > 0) {
+ 
+    return false;
+  }
+
   if (isValid) {
     showSection(sectionNumber);
-  } else {
   }
+
 }
 
   </script>
