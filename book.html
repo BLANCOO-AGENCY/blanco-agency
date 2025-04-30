@@ -686,11 +686,17 @@
     transform: none;
   }
   
+  .navbar {
+    display: none;
+  }
+  
   .menu-btn {
+    display: block;
     position: static;
     margin-left: auto;
   }
 }
+
 @media (max-width: 1024px) {
   header {
     padding: 15px 3%;
@@ -962,21 +968,31 @@
   <script>
     AOS.init();
 
-    // عناصر DOM
-    const menuBtn = document.getElementById('menuBtn');
-    const closeSidebar = document.getElementById('closeSidebar');
-    const mobileSidebar = document.getElementById('mobileSidebar');
+    document.addEventListener('DOMContentLoaded', function() {
+  const menuBtn = document.getElementById('menuBtn');
+  const closeSidebar = document.getElementById('closeSidebar');
+  const mobileSidebar = document.getElementById('mobileSidebar');
 
-    // فتح/إغلاق الشريط الجانبي
-    menuBtn.addEventListener('click', function() {
+  if (menuBtn && mobileSidebar) {
+    menuBtn.addEventListener('click', function(e) {
+      e.stopPropagation(); // لمنع تغطية الحدث
       mobileSidebar.classList.add('open');
-      menuBtn.classList.add('active');
     });
 
     closeSidebar.addEventListener('click', function() {
       mobileSidebar.classList.remove('open');
-      menuBtn.classList.remove('active');
     });
+
+    // إغلاق القائمة عند النقر خارجها
+    document.addEventListener('click', function(e) {
+      if (!mobileSidebar.contains(e.target) && e.target !== menuBtn) {
+        mobileSidebar.classList.remove('open');
+      }
+    });
+  } else {
+    console.error('عناصر القائمة غير موجودة في الصفحة!');
+  }
+});
 
     // إغلاق الشريط عند النقر خارج المحتوى
     document.addEventListener('click', function(event) {
