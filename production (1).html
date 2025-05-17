@@ -1,0 +1,189 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Production | BLANCO</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body {
+      height: 100%;
+      font-family: 'Playfair Display', serif;
+      background-color: #000;
+      color: #fff;
+      overflow-x: hidden;
+    }
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(69, 67, 67, 0.139);
+      padding: 15px 5%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 200;
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(64, 0, 0, 0.5);
+    }
+    .logo {
+      font-size: 2.5rem;
+      font-weight: bold;
+      color: #400000;
+      text-transform: uppercase;
+      font-family: 'Playfair Display', serif;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    .navbar {
+      display: flex;
+      margin-left: auto;
+    }
+    .navbar a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: #f5f5f5;
+      font-weight: 500;
+      font-size: 1rem;
+      letter-spacing: 1px;
+      transition: all 0.3s ease;
+      position: relative;
+      padding: 5px 0;
+    }
+    .navbar a:hover {
+      color: #400000;
+    }
+    main {
+      padding-top: 120px;
+      padding-bottom: 60px;
+      min-height: 100vh;
+    }
+    .grid-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+      padding: 0 5%;
+    }
+    .grid-item {
+      position: relative;
+      overflow: hidden;
+      border-radius: 12px;
+    }
+    .grid-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+      border-radius: 12px;
+    }
+    .grid-item:hover img {
+      transform: scale(1.05);
+    }
+    footer {
+      background: rgba(0, 0, 0, 0.9);
+      padding: 40px 0;
+      text-align: center;
+      border-top: 1px solid rgba(64, 0, 0, 0.3);
+    }
+    .footer-nav {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-bottom: 30px;
+      flex-wrap: wrap;
+    }
+    .footer-btn {
+      display: inline-flex;
+      align-items: center;
+      padding: 12px 25px;
+      background: transparent;
+      color: #f2ebc6;
+      text-decoration: none;
+      border-radius: 50px;
+      font-size: 16px;
+      border: none;
+      position: relative;
+    }
+    .footer-btn i {
+      margin-right: 10px;
+      font-size: 18px;
+      color: #400000;
+    }
+    .footer-btn:hover {
+      color: #fff;
+      transform: translateY(-3px);
+    }
+    .footer-btn:hover i {
+      color: #fff;
+    }
+    .copyright-section {
+      color: rgba(255, 255, 255, 0.8);
+      font-size: 16px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .copyright-text {
+      margin-bottom: 15px;
+      font-size: 18px;
+    }
+    .creator-link {
+      color: #f2ebc6;
+      text-decoration: none;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo" onclick="location.href='index.html'">B L A N C O</div>
+    <div class="navbar">
+      <a href="women.html">WOMEN</a>
+      <a href="men.html">MEN</a>
+      <a href="lifestyle.html">LIFE STYLE</a>
+      <a href="production.html">PRODUCTION</a>
+      <a href="about-us.html">ABOUT</a>
+      <a href="contact-us.html">CONTACT</a>
+    </div>
+  </header>
+
+  <main>
+    <div class="grid-container">
+      <div class="grid-item"><img src="https://images.unsplash.com/photo-1604335399104-0e389b1cdb4c" alt="img1"></div>
+      <div class="grid-item"><img src="https://images.unsplash.com/photo-1518112166131-74519a0b1c69" alt="img2"></div>
+      <div class="grid-item"><img src="https://images.unsplash.com/photo-1604335399504-9c13ec39983c" alt="img3"></div>
+      <div class="grid-item"><img src="https://images.unsplash.com/photo-1621503033571-b9e4e4105c4b" alt="img4"></div>
+      <div class="grid-item"><img src="https://images.unsplash.com/photo-1618221710894-8b39ef6f7a1f" alt="img5"></div>
+      <div class="grid-item"><img src="https://images.unsplash.com/photo-1587397845858-e6cf4916a7b1" alt="img6"></div>
+      <div class="grid-item"><img src="https://images.unsplash.com/photo-1589820296156-2454bb8e691b" alt="img7"></div>
+      <div class="grid-item"><img src="https://images.unsplash.com/photo-1604335398804-b9226ed4decc" alt="img8"></div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-nav">
+      <a href="terms-and-conditions.html" class="footer-btn">
+        <i class="fas fa-file-contract"></i>
+        <span>Terms & Conditions</span>
+      </a>
+      <a href="contact-us.html" class="footer-btn">
+        <i class="fas fa-envelope"></i>
+        <span>Contact Us</span>
+      </a>
+      <a href="about-us.html" class="footer-btn">
+        <i class="fas fa-info-circle"></i>
+        <span>About Us</span>
+      </a>
+    </div>
+    <div class="copyright-section">
+      <p class="copyright-text">
+        &copy; <a href="#" class="creator-link">2025 BLANCO Agency. All Rights Reserved.</a>
+      </p>
+    </div>
+  </footer>
+
+</body>
+</html>

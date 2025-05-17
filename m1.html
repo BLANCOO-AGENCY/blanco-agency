@@ -3,9 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>blanco.agency - Men</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  <title>blanco.agency - JAMES WILSON</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -25,7 +24,7 @@
       position: fixed;
       top: 0;
       width: 100%;
-      background: rgba(75, 73, 73, 0.057);
+      background: rgba(255, 255, 255, 0.1);
       padding: 20px 40px;
       display: flex;
       justify-content: space-between;
@@ -163,55 +162,63 @@
       transition: transform 0.3s;
     }
 
-    .menu-btn.active {
-      transform: rotate(90deg);
+    /* Model Info Section */
+    .model-header {
+      padding: 150px 40px 40px;
+      text-align: center;
+    }
+
+    .model-name {
+      font-size: 42px;
+      font-weight: bold;
+      margin-bottom: 10px;
+      color: #f2ebc6;
+    }
+
+    .model-measurements {
+      font-family: 'Roboto', sans-serif;
+      font-size: 18px;
+      opacity: 0.9;
+      margin-bottom: 30px;
     }
 
     /* Gallery Styles */
     .gallery-container {
-      padding: 120px 40px 60px;
+      padding: 0 40px 60px;
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
       gap: 30px;
-    }
-
-    .model-card {
-      position: relative;
-      overflow: hidden;
-      border-radius: 10px;
-      transition: transform 0.3s ease;
-      cursor: pointer;
-    }
-
-    .model-card:hover {
-      transform: scale(1.03);
     }
 
     .model-image {
       width: 100%;
       object-fit: cover;
       display: block;
+      border-radius: 8px;
+      transition: transform 0.3s ease;
+      cursor: zoom-in;
     }
 
-    .model-info {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
-      padding: 20px;
-      color: #5c0000;
+    .model-image:hover {
+      transform: scale(1.02);
     }
 
-    .model-name {
-      font-size: 24px;
+    /* Back Button */
+    .back-button {
+      display: inline-block;
+      margin-top: 30px;
+      padding: 12px 25px;
+      background-color: #400000;
+      color: white;
+      text-decoration: none;
+      border-radius: 30px;
       font-weight: bold;
-      margin-bottom: 5px;
+      transition: all 0.3s ease;
     }
 
-    .model-measurements {
-      font-size: 16px;
-      opacity: 0.9;
+    .back-button:hover {
+      background-color: #500000;
+      transform: scale(1.05);
     }
 
     /* Mobile Sidebar Styles */
@@ -286,11 +293,6 @@
       border: none;
     }
 
-    .close-sidebar:hover {
-      transform: rotate(90deg);
-      color: #f2ebc6;
-    }
-
     @media (max-width: 768px) {
       .navbar {
         display: none;
@@ -300,9 +302,21 @@
         display: block;
       }
 
+      .model-header {
+        padding: 120px 20px 30px;
+      }
+
+      .model-name {
+        font-size: 32px;
+      }
+
+      .model-measurements {
+        font-size: 16px;
+      }
+
       .gallery-container {
         grid-template-columns: 1fr;
-        padding: 100px 20px 40px;
+        padding: 0 20px 40px;
       }
     }
 
@@ -310,32 +324,11 @@
       .mobile-sidebar {
         display: none;
       }
-    }
       
       .menu-btn {
         display: none;
       }
-      @media (max-width: 768px) {
-      .site-footer {
-        padding: 25px 15px;
-      }
-      .footer-nav {
-        flex-direction: column;
-        align-items: center;
-        gap: 15px;
-      }
-      .footer-btn {
-        padding: 10px 20px;
-        font-size: 14px;
-      }
-      
-      .footer-btn i {
-        font-size: 16px;
-        margin-right: 8px;
-      }
-    }
-
-
+      /* Footer Styles */
       .site-footer {
   background: rgba(0, 0, 0, 0.9);
   padding: 40px 0;
@@ -499,6 +492,7 @@
     gap: 5px;
   }
 }
+    }
   </style>
 </head>
 <body>
@@ -506,13 +500,12 @@
   <header>
     <div class="logo">B L A N C O</div>
     <div class="navbar">
-      <a href="index.html">HOME</a>
-<a href="women.html">WOMEN</a>
-<a href="men.html">MEN</a>
-<a href="lifestyle.html">LIFE STYLE</a>
-<a href="PRODUCTION.html">PRODUCTION</a>
-<a href="about-us.html">ABOUT</a>
-<a href="contact-us.html">CONTACT</a>
+      <a href="women.html">WOMEN</a>
+      <a href="men.html">MEN</a>
+      <a href="lifestyle.html">LIFE STYLE</a>
+      <a href="PRODUCTION.html">PRODUCTION</a>
+      <a href="about-us.html">ABOUT</a>
+      <a href="contact-us.html">CONTACT</a>
     </div>
     </div>
     <div class="menu-btn" id="menuBtn">
@@ -527,14 +520,13 @@
     </button>
     
     <a href="index.html">HOME</a>
-    <a href="index.html">HOME</a>
     <a href="women.html">WOMEN</a>
     <a href="men.html">MEN</a>
     <a href="lifestyle.html">LIFE STYLE</a>
     <a href="PRODUCTION.html">PRODUCTION</a>
     <a href="about-us.html">ABOUT</a>
-    <a href="contact-us.html">CONTACT</a> 
-
+    <a href="contact-us.html">CONTACT</a>
+    
     <div class="social-links">
       <a href="#"><i class="fab fa-twitter"></i></a>
       <a href="#"><i class="fab fa-instagram"></i></a>
@@ -544,31 +536,32 @@
     </div>
   </div>
 
-  <!-- Gallery Section -->
-  <div class="gallery-container">
-
-<div class="model-card" onclick="window.location.href='m1.html'">
-      <img src="images\1.jpg" alt="Model 1" class="model-image">
-      <div class="model-info">
-        <div class="model-name">JAMES WILSON</div>
-        <div class="model-measurements">Height: 185cm | Chest: 100cm | Waist: 80cm</div>
-      </div>
+  <!-- Model Info Section -->
+  <div class="model-header">
+    <h1 class="model-name">JAMES WILSON</h1>
+    <div class="model-measurements">
+      Height: 185cm | Chest: 100cm | Waist: 80cm | Shoes: 44EU
     </div>
-
-    <!-- Model 2 -->
-    <div class="model-card" onclick="window.location.href='m6.html'">
-      <img src="images\6.jpg" alt="Model 6" class="model-image">
-      <div class="model-info">
-        <div class="model-name">ETHAN JAMES</div>
-        <div class="model-measurements">Height: 187cm | Chest: 101cm | Waist: 81cm</div>
-      </div>
-    </div>
+    <a href="men.html" class="back-button">Back to Models</a>
   </div>
 
-  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-  <script>
-    AOS.init();
+  <!-- Model Gallery -->
+  <div class="gallery-container">
+    <img src="images\1.jpg" alt="" class="model-image">
+    <img src="images\11.jpg" alt="" class="model-image">
+    <img src="images\111.jpg" alt="" class="model-image">
+    <img src="images\1111.jpg" alt="" class="model-image">
+    <img src="images\11111.jpg" alt="" class="model-image">
+    <img src="images\111111.jpg" alt="" class="model-image">
+    <img src="images\1111111.jpg" alt="" class="model-image">
+    <img src="images\11111111.jpg" alt="" class="model-image">
+    <img src="images\111111111.jpg" alt="" class="model-image">
+    <img src="images\1111111111.jpg" alt="" class="model-image">
+    <img src="images\11111111111.jpg" alt="" class="model-image">
+    <img src="images\111111111111.jpg" alt="" class="model-image">
+  </div>
 
+  <script>
     // DOM elements
     const menuBtn = document.getElementById('menuBtn');
     const closeSidebar = document.getElementById('closeSidebar');
@@ -577,27 +570,43 @@
     // Open/close sidebar
     menuBtn.addEventListener('click', function() {
       mobileSidebar.classList.add('open');
-      menuBtn.classList.add('active');
     });
-
-    document.querySelector('.logo').addEventListener('click', function() {
-    this.style.opacity = '0.7'; // تأثير خفيف عند النقر
-    setTimeout(() => {
-      window.location.href = 'index.html';
-    }, 200); // تأخير 200 مللي ثانية لرؤية التأثير
-  });
 
     closeSidebar.addEventListener('click', function() {
       mobileSidebar.classList.remove('open');
-      menuBtn.classList.remove('active');
     });
 
     // Close sidebar when clicking outside
     document.addEventListener('click', function(event) {
       if (!mobileSidebar.contains(event.target) && event.target !== menuBtn && !menuBtn.contains(event.target)) {
         mobileSidebar.classList.remove('open');
-        menuBtn.classList.remove('active');
       }
+    });
+
+    document.querySelector('.logo').addEventListener('click', function() {
+    window.location.href = 'index.html';
+  });
+  document.querySelector('.logo').addEventListener('click', function() {
+    this.style.opacity = '0.7'; // تأثير خفيف عند النقر
+    setTimeout(() => {
+      window.location.href = 'index.html';
+    }, 200); // تأخير 200 مللي ثانية لرؤية التأثير
+  });
+
+    // Image zoom functionality
+    const images = document.querySelectorAll('.model-image');
+    images.forEach(img => {
+      img.addEventListener('click', function() {
+        this.classList.toggle('zoomed');
+        if (this.classList.contains('zoomed')) {
+          this.style.transform = 'scale(1.5)';
+          this.style.zIndex = '100';
+          this.style.position = 'relative';
+        } else {
+          this.style.transform = 'scale(1)';
+          this.style.zIndex = 'auto';
+        }
+      });
     });
   </script>
 <footer class="site-footer">
