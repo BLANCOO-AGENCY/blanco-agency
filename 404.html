@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Under Construction - BLANCO Agency</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            height: 100%;
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+            background: #000;
+            color: #fff;
+        }
+
+        .container {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            padding: 20px;
+            background: linear-gradient(135deg, #000 0%, #0a0a0a 50%, #000 100%);
+        }
+
+        /* خلفية متحركة */
+        .animated-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            overflow: hidden;
+        }
+
+        .floating-shapes {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+
+        .shape {
+            position: absolute;
+            background: linear-gradient(45deg, rgba(64, 0, 0, 0.1), rgba(64, 0, 0, 0.05));
+            border-radius: 50%;
+            animation: float 20s infinite linear;
+        }
+
+        .shape:nth-child(1) {
+            width: 80px;
+            height: 80px;
+            left: 10%;
+            animation-delay: 0s;
+            animation-duration: 25s;
+        }
+
+        .shape:nth-child(2) {
+            width: 120px;
+            height: 120px;
+            left: 85%;
+            animation-delay: -5s;
+            animation-duration: 30s;
+        }
+
+        .shape:nth-child(3) {
+            width: 60px;
+            height: 60px;
+            left: 50%;
+            animation-delay: -10s;
+            animation-duration: 35s;
+        }
+
+        .shape:nth-child(4) {
+            width: 100px;
+            height: 100px;
+            left: 20%;
+            animation-delay: -15s;
+            animation-duration: 20s;
+        }
+
+        .shape:nth-child(5) {
+            width: 70px;
+            height: 70px;
+            left: 70%;
+            animation-delay: -20s;
+            animation-duration: 28s;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(100vh) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100px) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        /* خطوط متحركة في الخلفية */
+        .grid-lines {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                linear-gradient(rgba(64, 0, 0, 0.1) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(64, 0, 0, 0.1) 1px, transparent 1px);
+            background-size: 100px 100px;
+            animation: gridMove 20s linear infinite;
+        }
+
+        @keyframes gridMove {
+            0% {
+                transform: translate(0, 0);
+            }
+            100% {
+                transform: translate(100px, 100px);
+            }
+        }
+
+        /* المحتوى الرئيسي */
+        .content {
+            text-align: center;
+            z-index: 10;
+            position: relative;
+            max-width: 800px;
+            width: 100%;
+        }
+
+        /* شعار BLANCO */
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 4rem;
+            font-weight: 700;
+            color: #400000;
+            margin-bottom: 2rem;
+            letter-spacing: 3px;
+            animation: logoGlow 3s ease-in-out infinite alternate;
+            text-transform: uppercase;
+        }
+
+        @keyframes logoGlow {
+            0% {
+                text-shadow: 0 0 20px rgba(64, 0, 0, 0.5);
+            }
+            100% {
+                text-shadow: 0 0 40px rgba(64, 0, 0, 0.8), 0 0 80px rgba(64, 0, 0, 0.3);
+            }
+        }
+
+        /* رقم 404 مع تأثير ثلاثي الأبعاد */
+        .error-code {
+            font-size: 12rem;
+            font-weight: 900;
+            color: transparent;
+            background: linear-gradient(45deg, #400000, #800000, #400000);
+            -webkit-background-clip: text;
+            background-clip: text;
+            margin: 2rem 0;
+            position: relative;
+            animation: pulse3D 2s ease-in-out infinite;
+            text-shadow: 0 0 30px rgba(64, 0, 0, 0.5);
+        }
+
+        @keyframes pulse3D {
+            0%, 100% {
+                transform: scale(1) rotateX(0deg);
+                filter: brightness(1);
+            }
+            50% {
+                transform: scale(1.05) rotateX(5deg);
+                filter: brightness(1.2);
+            }
+        }
+
+        /* العنوان الرئيسي */
+        .main-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(45deg, #fff, #f5f5f5, #fff);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            animation: titleShine 3s ease-in-out infinite;
+        }
+
+        @keyframes titleShine {
+            0%, 100% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+        }
+
+        /* النص الوصفي */
+        .description {
+            font-size: 1.3rem;
+            line-height: 1.6;
+            margin-bottom: 3rem;
+            color: rgba(255, 255, 255, 0.9);
+            animation: fadeInUp 1s ease-out 0.5s both;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* زر العودة للصفحة الرئيسية */
+        .home-button {
+            display: inline-flex;
+            align-items: center;
+            padding: 18px 40px;
+            background: linear-gradient(45deg, #400000, #600000);
+            color: #fff;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(64, 0, 0, 0.3);
+            animation: buttonFloat 3s ease-in-out infinite;
+        }
+
+        .home-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.7s;
+        }
+
+        .home-button:hover::before {
+            left: 100%;
+        }
+
+        .home-button:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 20px 40px rgba(64, 0, 0, 0.4);
+            background: linear-gradient(45deg, #500000, #700000);
+        }
+
+        .home-button i {
+            margin-right: 10px;
+            font-size: 1.2rem;
+            animation: iconBounce 2s ease-in-out infinite;
+        }
+
+        @keyframes buttonFloat {
+            0%, 100% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-5px);
+            }
+        }
+
+        @keyframes iconBounce {
+            0%, 100% {
+                transform: translateX(0px);
+            }
+            50% {
+                transform: translateX(-3px);
+            }
+        }
+
+        /* بناء متحرك */
+        .construction-icon {
+            font-size: 4rem;
+            color: #400000;
+            margin-bottom: 2rem;
+            animation: constructionSpin 4s linear infinite;
+        }
+
+        @keyframes constructionSpin {
+            0% {
+                transform: rotate(0deg);
+            }
+            25% {
+                transform: rotate(10deg);
+            }
+            50% {
+                transform: rotate(0deg);
+            }
+            75% {
+                transform: rotate(-10deg);
+            }
+            100% {
+                transform: rotate(0deg);
+            }
+        }
+
+        /* تأثير الجسيمات */
+        .particles {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+
+        .particle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: #400000;
+            border-radius: 50%;
+            animation: particleFloat 15s infinite linear;
+        }
+
+        .particle:nth-child(odd) {
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        @keyframes particleFloat {
+            0% {
+                transform: translateY(100vh) translateX(0px);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100px) translateX(100px);
+                opacity: 0;
+            }
+        }
+
+        /* استجابة للهواتف */
+        @media (max-width: 768px) {
+            .logo {
+                font-size: 2.5rem;
+                letter-spacing: 2px;
+            }
+
+            .error-code {
+                font-size: 8rem;
+            }
+
+            .main-title {
+                font-size: 2rem;
+            }
+
+            .description {
+                font-size: 1.1rem;
+                padding: 0 20px;
+            }
+
+            .home-button {
+                padding: 16px 32px;
+                font-size: 1rem;
+            }
+
+            .construction-icon {
+                font-size: 3rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .logo {
+                font-size: 2rem;
+            }
+
+            .error-code {
+                font-size: 6rem;
+            }
+
+            .main-title {
+                font-size: 1.7rem;
+            }
+
+            .description {
+                font-size: 1rem;
+            }
+
+            .home-button {
+                padding: 14px 28px;
+                font-size: 0.9rem;
+            }
+        }
+
+        /* تأثير الضوء المتحرك */
+        .light-beam {
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: conic-gradient(from 0deg, transparent, rgba(64, 0, 0, 0.1), transparent);
+            animation: lightRotate 20s linear infinite;
+            pointer-events: none;
+        }
+
+        @keyframes lightRotate {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- خلفية متحركة -->
+        <div class="animated-bg">
+            <div class="grid-lines"></div>
+            <div class="light-beam"></div>
+            <div class="floating-shapes">
+                <div class="shape"></div>
+                <div class="shape"></div>
+                <div class="shape"></div>
+                <div class="shape"></div>
+                <div class="shape"></div>
+            </div>
+        </div>
+
+        <!-- جسيمات متحركة -->
+        <div class="particles" id="particles"></div>
+
+        <!-- المحتوى الرئيسي -->
+        <div class="content">
+            <div class="logo">B L A N C O</div>
+            
+            <div class="construction-icon">
+                <i class="fas fa-tools"></i>
+            </div>
+            
+            <div class="error-code">404</div>
+            
+            <h1 class="main-title">Under Construction</h1>
+            
+            <p class="description">
+                This page is currently under construction and will be available soon.<br>
+                Thank you for your patience.<br>
+                <strong>BLANCO Agency</strong>
+            </p>
+            
+            <a href="index.html" class="home-button">
+                <i class="fas fa-home"></i>
+                Back to Home
+            </a>
+        </div>
+    </div>
+
+    <script>
+        // إنشاء جسيمات متحركة
+        function createParticles() {
+            const particlesContainer = document.getElementById('particles');
+            const particleCount = window.innerWidth < 768 ? 15 : 30;
+            
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.animationDelay = Math.random() * 15 + 's';
+                particle.style.animationDuration = (Math.random() * 10 + 10) + 's';
+                particlesContainer.appendChild(particle);
+            }
+        }
+
+        // تأثير التتبع للماوس
+        document.addEventListener('mousemove', (e) => {
+            if (window.innerWidth > 768) {
+                const cursor = document.createElement('div');
+                cursor.style.position = 'fixed';
+                cursor.style.left = e.clientX + 'px';
+                cursor.style.top = e.clientY + 'px';
+                cursor.style.width = '6px';
+                cursor.style.height = '6px';
+                cursor.style.background = 'rgba(64, 0, 0, 0.6)';
+                cursor.style.borderRadius = '50%';
+                cursor.style.pointerEvents = 'none';
+                cursor.style.zIndex = '1000';
+                cursor.style.animation = 'fadeOut 1s ease-out forwards';
+                
+                document.body.appendChild(cursor);
+                
+                setTimeout(() => {
+                    if (cursor.parentNode) {
+                        cursor.parentNode.removeChild(cursor);
+                    }
+                }, 1000);
+            }
+        });
+
+        // تأثير fadeOut للجسيمات
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes fadeOut {
+                0% {
+                    opacity: 1;
+                    transform: scale(1);
+                }
+                100% {
+                    opacity: 0;
+                    transform: scale(0);
+                }
+            }
+        `;
+        document.head.appendChild(style);
+
+        // تشغيل الأنيميشنز عند تحميل الصفحة
+        window.addEventListener('load', () => {
+            createParticles();
+            
+            // تأثير التحميل التدريجي للعناصر
+            const elements = document.querySelectorAll('.content > *');
+            elements.forEach((el, index) => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(30px)';
+                el.style.transition = 'all 0.8s ease-out';
+                
+                setTimeout(() => {
+                    el.style.opacity = '1';
+                    el.style.transform = 'translateY(0)';
+                }, index * 200);
+            });
+        });
+
+        // تأثير نبضة عند النقر على الزر
+        document.querySelector('.home-button').addEventListener('click', function(e) {
+            const ripple = document.createElement('span');
+            const rect = this.getBoundingClientRect();
+            const size = Math.max(rect.width, rect.height);
+            const x = e.clientX - rect.left - size / 2;
+            const y = e.clientY - rect.top - size / 2;
+            
+            ripple.style.width = ripple.style.height = size + 'px';
+            ripple.style.left = x + 'px';
+            ripple.style.top = y + 'px';
+            ripple.style.position = 'absolute';
+            ripple.style.borderRadius = '50%';
+            ripple.style.background = 'rgba(255, 255, 255, 0.6)';
+            ripple.style.transform = 'scale(0)';
+            ripple.style.animation = 'ripple 0.6s linear';
+            ripple.style.pointerEvents = 'none';
+            
+            this.appendChild(ripple);
+            
+            setTimeout(() => {
+                ripple.remove();
+            }, 600);
+        });
+
+        // إضافة تأثير الـ ripple
+        const rippleStyle = document.createElement('style');
+        rippleStyle.textContent = `
+            @keyframes ripple {
+                to {
+                    transform: scale(4);
+                    opacity: 0;
+                }
+            }
+        `;
+        document.head.appendChild(rippleStyle);
+    </script>
+</body>
+</html>
