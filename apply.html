@@ -758,6 +758,48 @@
   20%, 60% { transform: translateX(-5px); }
   40%, 80% { transform: translateX(5px); }
 }
+
+/* أضف هذه التعديلات في قسم media query للهواتف */
+@media (max-width: 768px) {
+  .image-upload-grid {
+    grid-template-columns: 1fr; /* صف واحد في الموبايل */
+    gap: 15px; /* تقليل المسافة بين العناصر */
+    margin-bottom: 20px;
+  }
+
+  .image-upload-item {
+    flex-direction: row; /* تنسيق أفقي للعناصر */
+    align-items: center;
+    gap: 15px;
+    padding: 10px;
+    background: rgba(20, 20, 20, 0.5);
+    border-radius: 10px;
+  }
+
+  .image-upload-item img {
+    width: 100px; /* تصغير حجم الصور */
+    height: 150px;
+    max-width: none;
+  }
+
+  .upload-area {
+    padding: 10px;
+    flex-grow: 1;
+  }
+
+  .upload-area h2 {
+    font-size: 16px;
+    margin-bottom: 5px;
+  }
+
+  .upload-area i {
+    font-size: 25px;
+  }
+
+  .upload-area p {
+    font-size: 12px;
+  }
+}
   
   .footer-btn {
     width: 100%;
@@ -832,7 +874,7 @@
 
     </i><p>drop your photo</p><input name="half_body_photo" style="display: none;" type="file"/></div></div><div class="image-upload-item"><img alt="Side shot" src="images\77777.jpg"/>
       
-        <div class="upload-area"><h2>Profile</h2><i class="fas fa-cloud-upload-alt"></i><p>drop your photo</p><input name="side_shot_photo" style="display: none;" type="file"/></div></div><div class="image-upload-item"><img alt="Close up" src="images\33333333 - Copy (2).jpg"/>
+        <div class="upload-area"><h2>Profile</h2><i class="fas fa-cloud-upload-alt"></i><p>drop your photo</p><input name="side_shot_photo" style="display: none;" type="file"/></div></div><div class="image-upload-item"><img alt="Close up" src="33333333 - Copy (2).jpg"/>
             <div class="upload-area"><h2>hedshoot</h2><i class="fas fa-cloud-upload-alt"></i><p>drop your photo</p><input name="close_up_photo" style="display: none;" type="file"/></div></div></div><div class="form-group">
 <label>your name *</label>
 <input name="first_name APPLY " placeholder="First name " required="" type="text"/>
