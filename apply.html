@@ -860,9 +860,10 @@
   </div>
 <!-- تطبيق النموذج متعدد الخطوات -->
  <form id="bookingForm" action="https://formsubmit.co/blancoagencyy1@gmail.com" method="POST" class="booking-content">
-    <input name="_captcha" type="hidden" value=""/>
-<input type="hidden" name="_next" value="https://blancoo-agency.github.io/blanco-agency/th.html">
-    <div class="apply-container">
+      <!-- إضافة هذه المدخلات المخفية للتحكم في سلوك الإرسال -->
+      <input type="hidden" name="_next" value="https://blancoo-agency.github.io/blanco-agency/th.html">
+      <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="_subject" value="New Model Booking Request">
 <!-- القسم 1: المعلومات الشخصية -->
 <div class="form-section active" id="section1">
 <h2>PERSONAL INFORMATION</h2>
