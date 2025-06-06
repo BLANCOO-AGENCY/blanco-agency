@@ -1,0 +1,1141 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>blanco.agency - Apply</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&amp;display=swap" rel="stylesheet"/>
+<link href="https://unpkg.com/aos@next/dist/aos.css" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+<style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html, body {
+      height: 100%;
+      font-family: 'Playfair Display', serif;
+      overflow-x: hidden;
+    }
+
+    body {
+      background-color: #000;
+      color: #fff;
+    }
+
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(255, 255, 255, 0.1);
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 200;
+      backdrop-filter: blur(10px);
+    }
+
+    header {
+      -webkit-user-select: none; /* Safari */
+      -moz-user-select: none; /* Firefox */
+      -ms-user-select: none; /* IE/Edge */
+      user-select: none;
+    }
+    
+    /* تعديلات على الشريط العلوي */
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(69, 67, 67, 0.139);
+      padding: 15px 5%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 200;
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(64, 0, 0, 0.5);
+    }
+    
+    .logo {
+      font-size: 2.5rem;
+      font-weight: bold;
+      color: #400000;
+      letter-spacing: 5px;
+      text-transform: uppercase;
+      font-family: 'Playfair Display', serif;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      margin-right: auto; /* يدفع العناصر الأخرى إلى اليمين */
+    }
+    
+    .logo:hover {
+      color: #fff;
+      text-shadow: 0 0 10px rgba(64, 0, 0, 0.7);
+    }
+    
+    .navbar {
+      display: flex;
+      margin-left: auto; /* يدفع القائمة إلى اليمين */
+    }
+    
+    .navbar a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: #f5f5f5;
+      font-weight: 500;
+      font-size: 1rem;
+      letter-spacing: 1px;
+      transition: all 0.3s ease;
+      position: relative;
+      padding: 5px 0;
+    }
+    
+    .navbar a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: #400000;
+      transition: width 0.3s ease;
+    }
+    
+    .navbar a:hover::after {
+      width: 100%;
+    }
+    
+    .navbar a:hover {
+      color: #400000;
+    }
+    
+    /* تعديلات للشاشات المتوسطة */
+    @media (max-width: 1024px) {
+      header {
+        padding: 15px 3%;
+      }
+      
+      .logo {
+        font-size: 2rem;
+        letter-spacing: 3px;
+      }
+      
+      .navbar a {
+        margin: 0 10px;
+        font-size: 0.9rem;
+      }
+    }
+    
+    /* تعديلات للهواتف */
+    @media (max-width: 768px) {
+      header {
+        padding: 15px 5%;
+        justify-content: center;
+      }
+      
+      header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.409);
+      padding: 15px 5%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 200;
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(64, 0, 0, 0.5);
+    }
+    
+    .logo {
+      font-size: 2.5rem;
+      font-weight: bold;
+      color: #400000;
+      letter-spacing: 5px;
+      text-transform: uppercase;
+      font-family: 'Playfair Display', serif;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      margin-right: auto; /* يدفع العناصر الأخرى إلى اليمين */
+    }
+    
+    .logo:hover {
+      color: #fff;
+      text-shadow: 0 0 10px rgba(64, 0, 0, 0.7);
+    }
+    
+    .navbar {
+      display: flex;
+      margin-left: auto; /* يدفع القائمة إلى اليمين */
+    }
+    
+    .navbar a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: #f5f5f5;
+      font-weight: 500;
+      font-size: 1rem;
+      letter-spacing: 1px;
+      transition: all 0.3s ease;
+      position: relative;
+      padding: 5px 0;
+    }
+    
+    .navbar a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: #400000;
+      transition: width 0.3s ease;
+    }
+    
+    .navbar a:hover::after {
+      width: 100%;
+    }
+    
+    .navbar a:hover {
+      color: #400000;
+    }
+    
+    /* تعديلات للشاشات المتوسطة */
+    @media (max-width: 1024px) {
+      header {
+        padding: 15px 3%;
+      }
+      
+      .logo {
+        font-size: 2rem;
+        letter-spacing: 3px;
+      }
+      
+      .navbar a {
+        margin: 0 10px;
+        font-size: 0.9rem;
+      }
+    }
+    
+    /* تعديلات للهواتف */
+    @media (max-width: 768px) {
+      header {
+        padding: 15px 5%;
+        justify-content: center;
+      }
+      
+      .logo {
+        font-size: 1.8rem;
+        position: static;
+        transform: none;
+        margin: 0 auto;
+      }
+      
+      .menu-btn {
+        position: fixed;
+        right: 5%;
+        top: 20px;
+      }
+    }
+      
+      .menu-btn {
+        position: fixed;
+        right: 5%;
+        top: 20px;
+      }
+    }
+
+    .navbar a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: #f5f5f5;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+
+    .navbar a:hover {
+      color: #ebead6;
+    }
+
+    .menu-btn {
+      display: none;
+      font-size: 26px;
+      color: #f5f5f5;
+      cursor: pointer;
+      transition: transform 0.3s;
+    }
+
+    .menu-btn.active {
+      transform: rotate(90deg);
+    }
+
+    /* تطبيق النموذج */
+    .apply-container {
+      padding: 120px 50px 50px;
+      max-width: 1200px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 2;
+    }
+
+    .form-section {
+      background: rgba(30, 30, 30, 0.8);
+      padding: 40px;
+      border-radius: 15px;
+      margin-bottom: 30px;
+      backdrop-filter: blur(10px);
+      display: none;
+    }
+
+    .form-section.active {
+      display: block;
+      animation: fadeIn 0.5s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .form-section h2 {
+      font-size: 32px;
+      margin-bottom: 30px;
+      color: #f2ebc6;
+      border-bottom: 1px solid #400000;
+      padding-bottom: 10px;
+    }
+
+    .form-group {
+      margin-bottom: 25px;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 18px;
+    }
+
+    .form-group input, 
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 12px 15px;
+      background: rgba(20, 20, 20, 0.7);
+      border: 1px solid #333;
+      border-radius: 8px;
+      color: #fff;
+      font-size: 16px;
+      font-family: 'Playfair Display', serif;
+    }
+
+    .form-group textarea {
+      min-height: 100px;
+      resize: vertical;
+    }
+
+    .upload-area {
+      border: 2px dashed #400000;
+      padding: 20px;
+      text-align: center;
+      border-radius: 8px;
+      margin-bottom: 15px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .upload-area:hover {
+      background: rgba(64, 0, 0, 0.1);
+    }
+
+    .upload-area i {
+      font-size: 40px;
+      color: #400000;
+      margin-bottom: 10px;
+    }
+
+    .radio-group {
+      display: flex;
+      gap: 20px;
+      margin-top: 10px;
+    }
+
+    .radio-option {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .radio-option input {
+      width: auto;
+    }
+
+    .form-buttons {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 40px;
+    }
+
+    .form-button {
+      padding: 12px 30px;
+      font-size: 16px;
+      cursor: pointer;
+      border-radius: 8px;
+      text-transform: uppercase;
+      transition: 0.3s;
+      font-weight: bold;
+      border: none;
+    }
+
+    .back-btn {
+      background: transparent;
+      border: 2px solid #400000;
+      color: white;
+    }
+
+    .next-btn, .submit-btn {
+      background: #400000;
+      color: #f3f3f3;
+    }
+
+    .form-button:hover {
+      transform: scale(1.02);
+      opacity: 0.9;
+    }
+
+    .background-image {
+      position: fixed;
+      top: 0;
+      right: 0;
+      width: 100%;
+      height: 100%;
+      background: url('https://k.top4top.io/p_3392ir7mv1.png') no-repeat center center/cover;
+      opacity: 0.7;
+      z-index: 1;
+      filter: brightness(70%);
+    }
+
+    /* Mobile Styles */
+    @media (max-width: 768px) {
+      .navbar {
+        display: none;
+      }
+
+      .menu-btn {
+        display: block;
+      }
+
+      .apply-container {
+        padding: 100px 20px 30px;
+      }
+
+      .form-section {
+        padding: 25px;
+      }
+
+      .form-section h2 {
+        font-size: 26px;
+      }
+
+      .form-group label {
+        font-size: 16px;
+      }
+
+      .form-group input, 
+      .form-group select,
+      .form-group textarea {
+        padding: 10px 12px;
+        font-size: 15px;
+      }
+
+      .form-button {
+        padding: 10px 20px;
+        font-size: 14px;
+      }
+    }
+
+    /* Mobile Sidebar */
+    .mobile-sidebar {
+      position: fixed;
+      top: 0;
+      right: -300px;
+      width: 280px;
+      height: 100%;
+      background-color: rgba(17, 17, 17, 0.95);
+      padding: 80px 30px 30px;
+      transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      z-index: 999;
+      backdrop-filter: blur(10px);
+      overflow-y: auto;
+    }
+
+    .mobile-sidebar.open {
+      right: 0;
+    }
+
+    .mobile-sidebar a {
+      display: block;
+      margin: 20px 0;
+      color: #fff;
+      text-decoration: none;
+      font-size: 18px;
+      padding: 10px 15px;
+      border-radius: 8px;
+      transition: all 0.3s;
+    }
+
+    .mobile-sidebar a:hover {
+      background-color: rgba(64, 0, 0, 0.3);
+      padding-left: 20px;
+    }
+
+    .mobile-sidebar .social-links {
+      margin-top: 50px;
+      display: flex;
+      justify-content: center;
+      gap: 25px;
+    }
+
+    .mobile-sidebar .social-links a {
+      color: white;
+      font-size: 22px;
+      margin: 0;
+      padding: 0;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .mobile-sidebar .social-links a:hover {
+      background-color: rgba(64, 0, 0, 0.5);
+      transform: scale(1.1);
+    }
+
+    .close-sidebar {
+      position: absolute;
+      top: 25px;
+      right: 25px;
+      font-size: 24px;
+      color: white;
+      cursor: pointer;
+      transition: transform 0.3s;
+      background: none;
+      border: none;
+    }
+
+    .close-sidebar:hover {
+      transform: rotate(90deg);
+      color: #f2ebc6;
+    }
+
+    @media (min-width: 769px) {
+      .mobile-sidebar {
+        display: none;
+      }
+      
+      .menu-btn {
+        display: none;
+      }
+    }
+  
+.image-upload-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+  margin-bottom: 30px;
+}
+
+.image-upload-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.image-upload-item img {
+  width: 100%;
+  height: 250px;
+  max-width: 180px;
+  object-fit: cover;
+  border-radius: 10px;
+  border: 2px solid #400000;
+}
+
+
+/* كريتف سلايدر للجندر */
+.gender-slider {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 10px;
+  border-radius: 12px;
+  border: 1px solid #400000;
+  position: relative;
+  overflow: hidden;
+}
+
+.gender-option {
+  position: relative;
+  z-index: 1;
+  flex: 1;
+  text-align: center;
+  padding: 10px 0;
+  color: #f2ebc6;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s ease;
+  border-radius: 8px;
+}
+
+.gender-slider input[type="radio"] {
+  display: none;
+}
+
+.gender-slider input[type="radio"]:checked + label {
+  background: #400000;
+  color: #fff;
+}
+/* Footer Styles */
+.site-footer {
+  background: rgba(0, 0, 0, 0.9);
+  padding: 40px 0;
+  text-align: center;
+  position: relative;
+  z-index: 10;
+  backdrop-filter: blur(5px);
+  border-top: 1px solid rgba(64, 0, 0, 0.3);
+  margin-top: 80px;
+}
+
+.footer-nav {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+}
+
+.footer-btn {
+  display: inline-flex;
+  align-items: center;
+  padding: 12px 25px;
+  background: transparent;
+  color: #f2ebc6;
+  text-decoration: none;
+  border-radius: 50px;
+  transition: all 0.3s ease;
+  font-size: 16px;
+  border: none;
+  position: relative;
+  overflow: hidden;
+}
+
+.footer-btn::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: #400000;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s ease;
+}
+
+.footer-btn:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.footer-btn i {
+  margin-right: 10px;
+  font-size: 18px;
+  color: #400000;
+}
+
+.footer-btn:hover {
+  color: #fff;
+  transform: translateY(-3px);
+}
+
+.footer-btn:hover i {
+  color: #fff;
+}
+
+.copyright-section {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 16px;
+  line-height: 1.6;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.copyright-text {
+  margin-bottom: 15px;
+  font-size: 18px;
+}
+
+.credits {
+  font-size: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.credits i {
+  color: #400000;
+  margin: 0 5px;
+}
+
+.creator-link {
+  color: #f2ebc6;
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  margin-left: 5px;
+}
+
+.creator-link:hover {
+  color: #400000;
+  text-decoration: underline;
+}
+
+/* Responsive Footer */
+@media (max-width: 768px) {
+  .site-footer {
+    padding: 30px 15px;
+  }
+  
+  .footer-nav {
+    gap: 12px;
+  }
+  
+  .footer-btn {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+  
+  .footer-btn i {
+    font-size: 16px;
+    margin-right: 8px;
+  }
+  
+  .copyright-section {
+    font-size: 14px;
+  }
+  
+  .copyright-text {
+    font-size: 16px;
+  margin-bottom: 10px;
+  }
+  
+  .credits {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-nav {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .upload-area.error {
+  border: 2px solid red;
+  animation: shake 0.5s;
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  20%, 60% { transform: translateX(-5px); }
+  40%, 80% { transform: translateX(5px); }
+}
+
+/* أضف هذه التعديلات في قسم media query للهواتف */
+@media (max-width: 768px) {
+  .image-upload-grid {
+    grid-template-columns: 1fr; /* صف واحد في الموبايل */
+    gap: 15px; /* تقليل المسافة بين العناصر */
+    margin-bottom: 20px;
+  }
+
+  .image-upload-item {
+    flex-direction: row; /* تنسيق أفقي للعناصر */
+    align-items: center;
+    gap: 15px;
+    padding: 10px;
+    background: rgba(20, 20, 20, 0.5);
+    border-radius: 10px;
+  }
+
+  .image-upload-item img {
+    width: 100px; /* تصغير حجم الصور */
+    height: 150px;
+    max-width: none;
+  }
+
+  .upload-area {
+    padding: 10px;
+    flex-grow: 1;
+  }
+
+  .upload-area h2 {
+    font-size: 16px;
+    margin-bottom: 5px;
+  }
+
+  .upload-area i {
+    font-size: 25px;
+  }
+
+  .upload-area p {
+    font-size: 12px;
+  }
+}
+  
+  .footer-btn {
+    width: 100%;
+    max-width: 250px;
+    justify-content: center;
+  }
+  
+  .copyright-section {
+    font-size: 13px;
+  }
+  
+  .credits {
+    flex-direction: column;
+    gap: 5px;
+  }
+}
+
+</style>
+</link></head>
+<body>
+<header>
+<div class="logo">B L A N C O</div>
+<div class="navbar">
+<a href="women.html">WOMEN</a>
+<a href="men.html">MEN</a>
+<a href="404.html">LIFE STYLE</a>
+<a href="PRODUCTION.html">PRODUCTION</a>
+<a href="about-us.html">ABOUT</a>
+<a href="contact-us.html">CONTACT</a>
+</div>
+
+<div class="menu-btn" id="menuBtn">
+<i class="fas fa-bars"></i>
+</div>
+</header>
+<!-- Mobile sidebar -->
+<div class="mobile-sidebar" id="mobileSidebar">
+<button class="close-sidebar" id="closeSidebar">
+<i class="fas fa-times"></i>
+</button>
+<a href="index.html">HOME</a>
+<a href="women.html">WOMEN</a>
+<a href="men.html">MEN</a>
+<a href="404.html">LIFE STYLE</a>
+<a href="PRODUCTION.html">PRODUCTION</a>
+<a href="about-us.html">ABOUT</a>
+<a href="contact-us.html">CONTACT</a>
+<div class="social-links">
+<a href="#"><i class="fab fa-twitter"></i></a>
+<a href="#"><i class="fab fa-instagram"></i></a>
+<a href="#"><i class="fab fa-tiktok"></i></a>
+<a href="#"><i class="fab fa-facebook-f"></i></a>
+<a href="#"><i class="fab fa-youtube"></i></a>
+</div>
+</div>
+<!-- تطبيق النموذج متعدد الخطوات -->
+<form action="https://formsubmit.co/blancoagencyy1@gmail.com" enctype="multipart/form-data" method="POST">
+<input name="_captcha" type="hidden" value="false"/>
+<input name="_template" type="hidden" value="table"/>
+<input name="_next" type="hidden" value="https://blancoo-agency.github.io/blanco-agency/th.html"/> <!-- استبدل برابط موقعك الفعلي -->
+<div class="apply-container">
+<!-- القسم 1: المعلومات الشخصية -->
+<div class="form-section active" id="section1">
+<h2>PERSONAL INFORMATION</h2>
+<p style="margin-bottom: 20px; font-style: italic;">Please add 4 photos without makeup</p>
+<div class="image-upload-grid"><div class="image-upload-item"><img alt="Full body shot" src="images\6.jpg"/>
+<div class="upload-area"><h2>Full shoot</h2><i class="fas fa-cloud-upload-alt"></i><p>drop your photo</p><input accept="image/*" name="attachment[]" style="display: none;" type="file">
+</input></div></div><div class="image-upload-item"><img alt="Half body shot" src="images\1111111.jpg"/><div class="upload-area"><h2>Mid shoot</h2><i class="fas fa-cloud-upload-alt">
+</i><p>drop your photo</p><input accept="image/*" name="attachment[]" style="display: none;" type="file"/><input name="half_body_photo" type="hidden" value="Half body photo"/></div></div><div class="image-upload-item"><img alt="Side shot" src="images\77777.jpg"/>
+<div class="upload-area"><h2>Profile</h2><i class="fas fa-cloud-upload-alt"></i><p>drop your photo</p><input accept="image/*" name="attachment[]" style="display: none;" type="file"/><input name="side_shot_photo" type="hidden" value="Side shot photo"/></div></div><div class="image-upload-item"><img alt="Close up" src="33333333 - Copy (2).jpg"/>
+<div class="upload-area"><h2>hedshoot</h2><i class="fas fa-cloud-upload-alt"></i><p>drop your photo</p><input accept="image/*" name="attachment[]" style="display: none;" type="file"/><input name="close_up_photo" type="hidden" value="Close up photo"/></div></div></div><div class="form-group">
+<label>your name *</label>
+<input name="first_name APPLY " placeholder="First name " required="" type="text"/>
+</div>
+<div class="form-group">
+<label>Gender *</label>
+<div class="gender-slider">
+<input id="gender-male" name="gender" required="" type="radio" value="male"/>
+<label class="gender-option" for="gender-male">Male</label>
+<input id="gender-female" name="gender" type="radio" value="female"/>
+<label class="gender-option" for="gender-female">Female</label>
+</div>
+</div>
+<div class="form-group">
+<label>Country *</label>
+<input name="country" placeholder="Country" required="" type="text">
+</input></div>
+<div class="form-group">
+<label>Phone *</label>
+<div style="display: flex;">
+<select style="flex: 0 0 100px; margin-right: 10px;">
+<option value="+20">EG +20</option>
+<!-- يمكن إضافة المزيد من أكواد الدول -->
+</select>
+<input name="phone" placeholder="Phone number" required="" style="flex: 1;" type="tel">
+</input></div>
+</div>
+<div class="form-group">
+<label>Email *</label>
+<input name="email" placeholder="Email" required="" type="email"/>
+</div>
+<div class="form-group">
+<label>Birth Date *</label>
+<input name="birthday" required="" type="date"/>
+</div>
+<div class="form-buttons">
+<button class="form-button next-btn" onclick="validateAndGoTo(2, 'section1')" type="button">Next</button>
+</div>
+</div>
+<!-- القسم 2: القياسات -->
+<div class="form-section" id="section2">
+<h2>MEASUREMENTS</h2>
+<div class="form-group">
+<label>Height (cm) *</label>
+<input name="height" placeholder="Enter your height" required="" type="number"/>
+</div>
+<div class="form-group">
+<label>Waist (cm) *</label>
+<input name="waist" placeholder="Enter your waist measurement" required="" type="number"/>
+</div>
+<div class="form-group">
+<label>Bust (cm) *</label>
+<input name="bust" placeholder="Enter your bust measurement" required="" type="number"/>
+</div>
+<div class="form-group">
+<label>Hip (cm) *</label>
+<input name="hip" placeholder="Enter your hip measurement" required="" type="number"/>
+</div>
+<div class="form-group">
+<label>Eye color *</label>
+<input name="eye_color" placeholder="Enter your eye color" required="" type="text"/>
+</div>
+<div class="form-group">
+<label>Hair color *</label>
+<input name="hair_color" placeholder="Enter your hair color" required="" type="text"/>
+</div>
+<div class="form-buttons">
+<button class="form-button back-btn" onclick="showSection(1)">Back</button>
+<button class="form-button next-btn" onclick="validateAndGoTo(3, 'section2')" type="button">Next</button>
+</div>
+</div>
+<!-- القسم 3: معلومات إضافية -->
+<div class="form-section" id="section3">
+<h2>ADDITIONAL INFORMATION</h2>
+<div class="form-group">
+<label>Do you have tattoo? *</label>
+<div class="radio-group">
+<div class="radio-option">
+<input id="tattoo-yes" name="tattoo" required="" type="radio" value="yes"/>
+<label for="tattoo-yes">YES</label>
+</div>
+<div class="radio-option">
+<input id="tattoo-no" name="tattoo" type="radio" value="no"/>
+<label for="tattoo-no">NO</label>
+</div>
+</div>
+</div>
+<div class="form-group">
+<label>Do you have piercings? *</label>
+<div class="radio-group">
+<div class="radio-option">
+<input id="piercings-yes" name="piercings" required="" type="radio" value="yes"/>
+<label for="piercings-yes">YES</label>
+</div>
+<div class="radio-option">
+<input id="piercings-no" name="piercings" type="radio" value="no"/>
+<label for="piercings-no">NO</label>
+</div>
+</div>
+</div>
+<div class="form-group">
+<label>Instagram Link *</label>
+<input name="instagram" placeholder="Enter your Instagram profile URL" required="" type="url"/>
+</div>
+<div class="form-group">
+<label>Add any comments/notes...</label>
+<textarea name="notes" placeholder="Any additional information you'd like to share"></textarea>
+</div>
+<div class="form-buttons">
+<button class="form-button back-btn" onclick="showSection(2)">Back</button>
+<button class="form-button submit-btn">Apply</button>
+</div>
+</div>
+</div>
+</form><div class="background-image"></div>
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+    AOS.init();
+
+    // عناصر DOM
+    const menuBtn = document.getElementById('menuBtn');
+    const closeSidebar = document.getElementById('closeSidebar');
+    const mobileSidebar = document.getElementById('mobileSidebar');
+
+    menuBtn.addEventListener('click', function() {
+      mobileSidebar.classList.add('open');
+      menuBtn.classList.add('active');
+    });
+
+    closeSidebar.addEventListener('click', function() {
+      mobileSidebar.classList.remove('open');
+      menuBtn.classList.remove('active');
+    });
+
+    document.addEventListener('click', function(event) {
+      if (!mobileSidebar.contains(event.target) && event.target !== menuBtn && !menuBtn.contains(event.target)) {
+        mobileSidebar.classList.remove('open');
+        menuBtn.classList.remove('active');
+      }
+    });
+
+    document.addEventListener('contextmenu', function(e) {
+      e.preventDefault();
+    });
+    
+    document.addEventListener('copy', function(e) {
+      e.preventDefault();
+      alert('Content copying is disabled');
+    });
+    
+    window.addEventListener('scroll', function() {
+      const header = document.querySelector('header');
+      if (window.scrollY > 50) {
+        header.style.background = 'rgba(0, 0, 0, 0.95)';
+        header.style.padding = '10px 5%';
+      } else {
+        header.style.background = 'rgba(0, 0, 0, 0.8)';
+        header.style.padding = '15px 5%';
+      }
+    });
+
+    // التنقل بين أقسام النموذج
+    function showSection(sectionNumber) {
+      document.querySelectorAll('.form-section').forEach(section => {
+        section.classList.remove('active');
+      });
+      document.getElementById(`section${sectionNumber}`).classList.add('active');
+    }
+
+    // تفعيل مناطق الرفع عند النقر
+    document.querySelectorAll('.upload-area').forEach(area => {
+      area.addEventListener('click', function() {
+        this.querySelector('input[type="file"]').click();
+      });
+    });
+
+    document.querySelector('.logo').addEventListener('click', function() {
+    window.location.href = 'index.html';
+  });
+  document.querySelector('.logo').addEventListener('click', function() {
+    this.style.opacity = '0.7'; // تأثير خفيف عند النقر
+    setTimeout(() => {
+      window.location.href = 'index.html';
+    }, 200); // تأخير 200 مللي ثانية لرؤية التأثير
+  });
+
+    // عرض اسم الملف عند اختياره
+    document.querySelectorAll('.upload-area input[type="file"]').forEach(input => {
+      input.addEventListener('change', function() {
+        if (this.files.length > 0) {
+          const fileName = this.files[0].name;
+          this.parentElement.querySelector('p').textContent = fileName;
+        }
+      });
+    });
+    function validateAndGoTo(sectionNumber, currentSectionId) {
+  const currentSection = document.getElementById(currentSectionId);
+  const requiredInputs = currentSection.querySelectorAll('[required]');
+  let isValid = true;
+  let missingFields = [];
+
+  // التحقق من الحقول المطلوبة
+  requiredInputs.forEach(input => {
+    if (!input.value.trim() || (input.type === 'radio' && !currentSection.querySelector(`[name="${input.name}"]:checked`))) {
+      isValid = false;
+      input.style.border = '2px solid red';
+      missingFields.push(input.name.replace('_', ' '));
+    } else {
+      input.style.border = ''; // reset border if valid
+    }
+  });
+
+  // التحقق من الصور فقط في القسم الأول
+  if (currentSectionId === 'section1') {
+    const fileInputs = currentSection.querySelectorAll('input[type="file"]');
+    let missingPhotos = [];
+    
+    fileInputs.forEach(input => {
+      if (!input.files || input.files.length === 0) {
+        isValid = false;
+        input.parentElement.style.border = '2px solid red';
+        missingPhotos.push(input.name.replace(/_/g, ' '));
+      } else {
+        input.parentElement.style.border = ''; // reset border if valid
+      }
+    });
+
+    if (missingPhotos.length > 0) {
+   
+      
+      return false;
+    }
+  }
+
+  if (missingFields.length > 0) {
+ 
+    return false;
+  }
+
+  if (isValid) {
+    showSection(sectionNumber);
+  }
+
+}
+
+  </script>
+<footer class="site-footer">
+<div class="footer-nav">
+<a class="footer-btn" href="terms-and-conditions.html">
+<i class="fas fa-file-contract"></i>
+<span>Terms &amp; Conditions</span>
+</a>
+<a class="footer-btn" href="contact-us.html">
+<i class="fas fa-envelope"></i>
+<span>Contact Us</span>
+</a>
+<a class="footer-btn" href="about-us.html">
+<i class="fas fa-envelope"></i>
+<span>About Us</span>
+</a>
+</div>
+<div class="copyright-section">
+<p class="copyright-text">
+        © 2025 BLANCO Agency. All Rights Reserved.
+      </p>
+</div>
+</footer>
+</body>
+</html>
