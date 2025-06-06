@@ -860,14 +860,13 @@
   </div>
 <!-- تطبيق النموذج متعدد الخطوات -->
  
-<form action="https://formsubmit.co/blancoagencyy1@gmail.com" method="POST" enctype="multipart/form-data">
-  <input type="hidden" name="_captcha" value="false">
-  <input type="hidden" name="_template" value="table">
-  <input type="hidden" name="_next" value="https://blancoo-agency.github.io/blanco-agency/th.html">
- <!-- استبدل برابط موقعك الفعلي -->
-<div class="apply-container">
+<form id="applicationForm" method="POST" enctype="multipart/form-data">
+
+
+
+  <div class="apply-container">
 <!-- القسم 1: المعلومات الشخصية -->
-<div class="form-section active" id="section1">
+<div class="form-section active" id="section1"> 
 <h2>PERSONAL INFORMATION</h2>
 <p style="margin-bottom: 20px; font-style: italic;">Please add 4 photos without makeup</p>
 
@@ -1029,6 +1028,96 @@
     document.addEventListener('contextmenu', function(e) {
       e.preventDefault();
     });
+
+    // ... (ابق على الأكواد الأخرى كما هي)
+
+document.getElementById('applicationForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+  
+  // جمع بيانات النموذج
+  const formData = new FormData(this);
+  const data = {};
+  
+  // تحويل FormData إلى كائن عادي
+  formData.forEach((value, key) => {
+    data[key] = value;
+  });
+  
+  // جمع بيانات الصور
+  const imageInputs = document.querySelectorAll('input[type="file"]');
+  const images = [];
+  
+  for (let i = 0; i < imageInputs.length; i++) {
+    const file = imageInputs[i].files[0];
+    if (file) {
+      images.push({
+        name: imageInputs[i].name,
+        file: file
+      });
+    }
+  }
+  
+  // إضافة الصور إلى البيانات إذا كانت موجودة
+  if (images.length > 0) {
+    data.images = images;
+  }
+  
+  // إرسال البيانات إلى Google Apps Script
+  submitFormData(data);
+});
+
+function submitFormData(data) {
+  // إنشاء FormData جديد لإرسال الملفات
+  const formData = new FormData();
+  
+  // إضافة البيانات النصية
+  for (const key in data) {
+    if (key !== 'images') {
+      formData.append(key, data[key]);
+    }
+  }
+  
+  // إضافة الملفات إذا كانت موجودة
+  if (data.images) {
+    data.images.forEach((image, index) => {
+      formData.append(`image_${index}`, image.file);
+    });
+  }
+  
+  // عنوان URL الخاص بـ Google Apps Script
+  const scriptUrl = 'https://script.google.com/macros/s/AKfycbwK-sfx61QuoKqYZnyW3uOHmtlK_Lwszp3yFRyRGViGizof1T2gwfLfnGetxCqvv90b/exec';
+  
+  // إظهار حالة التحميل
+  const submitBtn = document.querySelector('.submit-btn');
+  submitBtn.innerHTML = 'Sending... <i class="fas fa-spinner fa-spin"></i>';
+  submitBtn.disabled = true;
+  
+  // إرسال البيانات
+  fetch(scriptUrl, {
+    method: 'POST',
+    body: formData
+  })
+  .then(response => {
+    if (!response.ok) {
+      throw new Error('Network response was not ok');
+    }
+    return response.json();
+  })
+  .then(data => {
+    if (data.status === 'success') {
+      // تحويل المستخدم إلى صفحة الشكر بعد الإرسال الناجح
+      window.location.href = 'https://blancoo-agency.github.io/blanco-agency/th.html';
+    } else {
+      throw new Error(data.message || 'حدث خطأ أثناء الإرسال');
+    }
+  })
+  .catch(error => {
+    console.error('Error:', error);
+    alert('حدث خطأ أثناء إرسال الطلب: ' + error.message);
+    submitBtn.innerHTML = 'Apply';
+    submitBtn.disabled = false;
+  });
+}
     
     document.addEventListener('copy', function(e) {
       e.preventDefault();
